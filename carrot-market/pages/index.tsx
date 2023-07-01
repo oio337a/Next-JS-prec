@@ -3,7 +3,7 @@ import type { NextPage } from 'next'
 export default function NextPage() {
   return (
     <div className='bg-slate-400 py-20 px-20 grid gap-10 lg:grid-cols-2 xl:grid-cols-3 min-h-screen xl:place-content-center'>
-      <div className='bg-white flex flex-col justify-between sm:bg-red-400 md:bg-teal-500 lg:bg-blue-500 xl:bg-yellow-500 p-6 rounded-3xl shadow-xl'>
+      <div className='bg-white dark:bg-black flex flex-col justify-between sm:bg-red-400 md:bg-teal-500 lg:bg-blue-500 xl:bg-yellow-500 p-6 rounded-3xl shadow-xl'>
         <span className='font-semibold text-3xl '>Select Item</span>
         <ul>
           {[1, 2, 3, 4, 5].map((i) => (
