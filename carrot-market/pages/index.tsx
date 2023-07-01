@@ -4,14 +4,15 @@ export default function NextPage() {
   return <div className='bg-slate-400 py-20 px-20 grid gap-10 min-h-screen'>
     <div className='bg-white p-6 rounded-3xl shadow-xl'>
       <span className='font-semibold text-3xl '>Select Item</span>
-      <div className='flex justify-between my-2'>
-        <span className="text-gray-500 ">Grey Chair</span>
-        <span className='font-semibold'>$19</span>
-      </div>
-      <div className='flex justify-between'>
-        <span className="text-gray-500 ">Grey Chair</span>
-        <span className='font-semibold'>&19</span>
-      </div>
+      <ul>
+        {[1, 2, 3, 4, 5].map((i) => (
+          <div key={i} className='flex justify-between my-2 odd:bg-blue-50 even:bg-yellow-500'>
+            <span className="text-gray-500 ">Grey Chair</span>
+            <span className='font-semibold'>$19</span>
+          </div>
+        ))}
+      </ul>
+      
       <div className="mt-2 pt-2 border-t-2 border-dashed flex justify-between">
         <span>Total</span>
         <span className='font-semibold'>$10</span>
@@ -19,7 +20,8 @@ export default function NextPage() {
       <button className='mt-5 bg-blue-500 text-white p-3 text-center rounded-xl w-2/4 mx-auto hover:bg-teal-500 hover:text-black
       active:bg-yellow-500 focus:bg-red-500'>Checkout</button>
     </div>
-    <div className='bg-white overflow-hidden rounded-3xl shadow-xl'>
+
+    <div className='bg-white overflow-hidden rounded-3xl shadow-xl group'>
       <div className='bg-blue-500 p-6 pb-14'>
         <span className='text-white text-2xl'>Profile</span>
       </div>
@@ -29,7 +31,7 @@ export default function NextPage() {
             <span className='text-sm text-gray-500'>Orders</span>
             <span className='font-medium'>340</span>
           </div>
-          <div className='h-24 w-24 bg-red-400 rounded-full'/>
+          <div className='h-24 w-24 bg-red-400 rounded-full group-hover:bg-green-500 transition-colors'/>
           <div className='flex flex-col items-center'>
             <span className='text-sm text-gray-500'>Spent</span>
             <span className='font-medium'>$2,310</span>
@@ -41,6 +43,7 @@ export default function NextPage() {
         </div>
       </div>
     </div>
+
     <div className='bg-white p-6 rounded-lg shadow-xl'>
       <div className='flex mb-5 justify-between items-center'>
         <span>👈</span>
@@ -71,5 +74,12 @@ export default function NextPage() {
         </div>
       </div>
     </div>
+
+    <form className='flex flex-col space-y-2 p-5'>
+      <input type="text" required placeholder='Username' className='border p-1 border-gray-400 rounded-lg peer' />
+      <span className='hidden peer-invalid:text-red-500 peer-invalid:block'>This input is invalid</span>
+      <span className='hidden peer-valid:text-blue-400 peer-valid:block'>Good</span>
+      <input type="submit" value="Login" className='bg-white' />
+    </form>
   </div>;
 }
