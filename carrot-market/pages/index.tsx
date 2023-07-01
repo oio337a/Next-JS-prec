@@ -81,5 +81,22 @@ export default function NextPage() {
       <span className='hidden peer-valid:text-blue-400 peer-valid:block'>Good</span>
       <input type="submit" value="Login" className='bg-white' />
     </form>
+
+    <div className='flex flex-col space-y-2 p-5'>
+      <details className='select-none open:text-white open:bg-indigo-500'>
+        <summary className='cursor-pointer'>What is my fav. food.</summary>
+        <span className='selection:bg-indigo-500 selection:'>김치</span>
+      </details>
+
+      <ul className='list-disc marker:text-red-500'>
+        <li>hi</li>
+        <li>hi</li>
+        <li>hi</li>
+      </ul>
+
+      <input type="file" className='file:border-0 file:rounded-md file:bg-purple-500 transition-colors file:cursor-pointer file:hover:text-pink-500 file:hover:bg-white file:hover:border-pink-500 file:hover:border' />
+
+      <p className='first-letter:text-xl first-letter:hover:text-teal-500'>안녕하세요. 홍길동입니다.</p>
+    </div>
   </div>;
 }
